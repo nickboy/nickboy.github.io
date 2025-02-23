@@ -1,0 +1,5 @@
+baseURL = 'https://nickboy.github.io/nickboy/'
+languageCode = 'en-us'
+title = 'Nick Liu's Personal Website'
+
+theme = 'PaperMod'
