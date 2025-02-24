@@ -31,3 +31,11 @@ hugo.linux
 
 # Temporary lock file while building
 /.hugo_build.lock
+
+node_modules/
+.wrangler/
+Tzu-Hua Liu Resume.pdf
+
+public/
+.DS_Store
+*.log
