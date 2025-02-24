@@ -1,5 +1,51 @@
-baseURL = 'https://nickboy.github.io/nickboy/'
+baseURL = '/'
 languageCode = 'en-us'
 title = "Nick Liu's Personal Website"
 
 theme = 'PaperMod'
+
+[params]
+defaultTheme = "auto"
+showReadingTime = true
+showShareButtons = true
+showPostNavLinks = true
+showBreadCrumbs = true
+showCodeCopyButtons = true
+showWordCount = true
+showRssButtonInSectionTermList = true
+useHugoToc = true
+disableSpecial1stPost = false
+comments = false
+hidemeta = false
+hideSummary = false
+
+[params.assets]
+disableScrollBarStyle = false
+
+[build]
+writeStats = true
+
+[module]
+[[module.mounts]]
+source = "assets"
+target = "assets"
+
+# 基本功能配置
+[menu]
+[[menu.main]]
+identifier = "posts"
+name = "Posts"
+url = "/posts/"
+weight = 10
+
+[[menu.main]]
+identifier = "archives"
+name = "Archives"
+url = "/archives/"
+weight = 20
+
+[[menu.main]]
+identifier = "tags"
+name = "Tags"
+url = "/tags/"
+weight = 30
