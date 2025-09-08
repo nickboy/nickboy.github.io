@@ -1,0 +1,57 @@
+experience:
+  - company: "Walmart Global Tech"
+    position: "Principal Software Engineer"
+    duration: "Nov 2024 - Present"
+    location: "Remote"
+    description: "Leading data infrastructure initiatives for recruiting systems"
+    highlights:
+      - "Leading Data Lake integration for recruiting related data"
+      - "Building data pipeline with Spark, Kafka and Hudi for 10+ sources"
+      - "Architecting scalable solutions for enterprise-level data processing"
+    technologies: ["Apache Spark", "Kafka", "Apache Hudi", "Data Lake", "Big Data"]
+
+  - company: "Twitter (X)"
+    position: "Software Engineer"
+    duration: "Nov 2022 - Nov 2024"
+    location: "Remote"
+    description: "Infrastructure and reliability engineering for large-scale systems"
+    highlights:
+      - "Standardized hardware and software configurations for 5,000+ hosts"
+      - "Delivered Python library for Canary Kernel Validation"
+      - "Designed automation mechanism for kernel updates"
+      - "Implemented custom commands system for Cache services"
+      - "Top ticket resolver with 140+ tickets in one on-call week"
+    technologies: ["Python", "Linux Kernel", "Infrastructure", "Automation", "Cache Systems"]
+
+  - company: "Amazon Web Services"
+    position: "Software Development Engineer II"
+    duration: "July 2017 - Nov 2022"
+    location: "Seattle, WA"
+    description: "Core member of AWS Billing team, focusing on billing accuracy and infrastructure"
+    highlights:
+      - "Designed and implemented unbilled usage detection mechanism"
+      - "Implemented Billing Unbilled Usage Auditor reducing false positives by 230M monthly"
+      - "Reduced charge discrepancies by 300x from $125,000 to $432"
+      - "Led migration of billing applications to new pricing dependency"
+      - "Built Billing UI with JavaScript and AngularJS during internship"
+    technologies: ["AWS", "JavaScript", "AngularJS", "Distributed Systems", "Billing Systems"]
+
+  - company: "eBay Inc."
+    position: "Data Science Intern"
+    duration: "May 2016 - Aug 2016"
+    location: "San Jose, CA"
+    description: "Machine learning for fraud detection systems"
+    highlights:
+      - "Applied xgboost with Scikit Learn for fraud detection with 71% accuracy"
+      - "Improved fraud detection algorithms using advanced ML techniques"
+    technologies: ["Python", "XGBoost", "Scikit-Learn", "Machine Learning", "Data Science"]
+
+  - company: "Trend Micro"
+    position: "Software Engineering Intern"
+    duration: "June 2011 - Aug 2011"
+    location: "Taiwan"
+    description: "Network security and parental control systems"
+    highlights:
+      - "Implemented routing table maintenance system for parental control"
+      - "Developed network filtering solutions"
+    technologies: ["C++", "Network Security", "Routing"]

@@ -1,9 +1,17 @@
 baseURL = '/'
 languageCode = 'en-us'
-title = "Nick Liu's Personal Website"
+title = "Nick Liu - Software Engineer"
 enableRobotsTXT = true
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 
-theme = 'ananke'
+theme = 'hugo-noir'
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    title = "Nick Liu - Software Engineer"
+    weight = 1
 
 [params]
 defaultTheme = "auto"

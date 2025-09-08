@@ -12,7 +12,7 @@ export default defineConfig({
   reporter: 'html',
   
   use: {
-    baseURL: 'http://localhost:1313',
+    baseURL: 'http://localhost:50144',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
@@ -42,8 +42,8 @@ export default defineConfig({
 
   webServer: {
     command: 'hugo server',
-    url: 'http://localhost:1313',
-    reuseExistingServer: !process.env.CI,
+    url: 'http://localhost:50144',
+    reuseExistingServer: true,
     timeout: 120 * 1000,
   },
 });

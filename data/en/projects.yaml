@@ -1,0 +1,54 @@
+projects:
+  - name: "Personal Portfolio Website"
+    description: "Modern, responsive portfolio website built with Hugo and deployed on GitHub Pages"
+    technologies: ["Hugo", "JavaScript", "HTML/CSS", "GitHub Actions"]
+    github: "https://github.com/nickboy/nickboy.github.io"
+    demo: "https://nickboy.github.io"
+    featured: true
+    highlights:
+      - "Implemented CI/CD pipeline with GitHub Actions"
+      - "Responsive design with mobile-first approach"
+      - "SEO optimized with structured data"
+
+  - name: "AWS Billing Auditor"
+    description: "Enterprise-scale billing validation system processing millions of transactions daily"
+    technologies: ["Python", "AWS", "DynamoDB", "Lambda", "SNS/SQS"]
+    featured: true
+    highlights:
+      - "Reduced false positives by 230M monthly transactions"
+      - "Saved $125,000+ in billing discrepancies"
+      - "Automated detection of unbilled usage patterns"
+
+  - name: "Infrastructure Automation Framework"
+    description: "Python-based framework for managing 5000+ production servers at Twitter"
+    technologies: ["Python", "Ansible", "Docker", "Kubernetes", "Linux"]
+    featured: true
+    highlights:
+      - "Standardized configurations across entire fleet"
+      - "Automated kernel validation and updates"
+      - "Reduced manual intervention by 80%"
+
+  - name: "Real-time Data Pipeline"
+    description: "Scalable data pipeline for recruiting data at Walmart Global Tech"
+    technologies: ["Apache Spark", "Kafka", "Hudi", "Scala", "AWS"]
+    featured: true
+    highlights:
+      - "Processing data from 10+ sources"
+      - "Real-time streaming with sub-second latency"
+      - "Handles TB-scale data daily"
+
+  - name: "Fraud Detection ML Model"
+    description: "Machine learning system for detecting fraudulent transactions at eBay"
+    technologies: ["Python", "XGBoost", "Scikit-Learn", "Pandas", "NumPy"]
+    highlights:
+      - "Achieved 71% accuracy in fraud detection"
+      - "Reduced false positives by 40%"
+      - "Processed millions of transactions daily"
+
+  - name: "Cache Command System"
+    description: "Custom command framework for distributed cache management at Twitter"
+    technologies: ["Go", "Redis", "gRPC", "Protocol Buffers"]
+    highlights:
+      - "Improved cache hit ratio by 25%"
+      - "Reduced latency by 40ms on average"
+      - "Simplified cache operations for developers"
