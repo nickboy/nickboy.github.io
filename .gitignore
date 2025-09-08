@@ -39,3 +39,19 @@ Tzu-Hua Liu Resume.pdf
 public/
 .DS_Store
 *.log
+
+# Playwright
+test-results/
+playwright-report/
+tests/screenshots/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.local
