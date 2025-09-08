@@ -1,6 +1,7 @@
 baseURL = '/'
 languageCode = 'en-us'
 title = "Nick Liu's Personal Website"
+enableRobotsTXT = true
 
 theme = 'ananke'
 
@@ -18,12 +19,30 @@ disableSpecial1stPost = false
 comments = false
 hidemeta = false
 hideSummary = false
+description = "Nick Liu's personal website - Software Engineer, Full Stack Developer"
+author = "Nick Liu"
+images = ["/images/avatar.png"] # Default Open Graph image
 
 [params.assets]
 disableScrollBarStyle = false
 
 [build]
 writeStats = true
+
+[sitemap]
+changefreq = "monthly"
+priority = 0.5
+
+[outputs]
+home = ["HTML", "RSS"]
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+
+[services]
+[services.googleAnalytics]
+# ID = "G-XXXXXXXXXX" # Add your Google Analytics ID here if needed
 
 [module]
 [[module.mounts]]
