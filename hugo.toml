@@ -27,9 +27,30 @@ disableSpecial1stPost = false
 comments = false
 hidemeta = false
 hideSummary = false
-description = "Nick Liu's personal website - Software Engineer, Full Stack Developer"
+description = "Nick Liu - Principal Software Engineer specializing in distributed systems, data infrastructure, and cloud technologies at Walmart Global Tech"
 author = "Nick Liu"
-images = ["/images/avatar.png"] # Default Open Graph image
+keywords = ["Software Engineer", "Data Engineering", "Distributed Systems", "AWS", "Apache Spark", "Kafka", "Cloud Computing", "Nick Liu"]
+images = ["/images/profile.jpg"] # Default Open Graph image
+copyright = "© 2025 Nick Liu. All rights reserved."
+
+# SEO and Social Media
+[params.seo]
+title = "Nick Liu - Principal Software Engineer"
+description = "Experienced software engineer with expertise in data infrastructure, distributed systems, and cloud technologies. Currently leading initiatives at Walmart Global Tech."
+canonical = "https://nickboy.github.io"
+
+# Open Graph
+[params.opengraph]
+title = "Nick Liu - Principal Software Engineer"
+description = "Portfolio and blog of Nick Liu, Principal Software Engineer at Walmart Global Tech"
+image = "/images/profile.jpg"
+type = "website"
+
+# Twitter Card
+[params.twitter]
+card = "summary_large_image"
+site = "@nickliu"
+creator = "@nickliu"
 
 [params.assets]
 disableScrollBarStyle = false
