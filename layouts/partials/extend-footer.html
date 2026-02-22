@@ -37,15 +37,6 @@
     });
   }
 
-  // Initial load
-  initAnimations();
-
-  // htmx page transitions
-  document.body.setAttribute("hx-boost", "true");
-  document.body.setAttribute("hx-swap", "innerHTML transition:true show:window:top");
-  document.body.setAttribute("hx-indicator", "body");
-  htmx.process(document.body);
-
   // Re-attach dark mode toggle listeners (lost when htmx swaps body innerHTML)
   function reinitDarkModeToggle() {
     var switcher = document.getElementById("appearance-switcher");
@@ -75,10 +66,20 @@
     }
   }
 
-  // Re-initialize after htmx content swap
-  document.body.addEventListener("htmx:afterSettle", function () {
-    AOS.refreshHard();
+  // Guard: this script re-executes on every htmx swap (it's inside <body>).
+  // Only run setup once; let the afterSettle handler do re-init on swaps.
+  if (!document.body.hasAttribute("hx-boost")) {
     initAnimations();
-    reinitDarkModeToggle();
-  });
+
+    document.body.setAttribute("hx-boost", "true");
+    document.body.setAttribute("hx-swap", "innerHTML transition:true show:window:top");
+    document.body.setAttribute("hx-indicator", "body");
+    htmx.process(document.body);
+
+    document.body.addEventListener("htmx:afterSettle", function () {
+      AOS.refreshHard();
+      initAnimations();
+      reinitDarkModeToggle();
+    });
+  }
 </script>
