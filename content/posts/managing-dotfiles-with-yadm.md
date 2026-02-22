@@ -42,7 +42,7 @@ What yadm adds on top:
 
 Here's what I track:
 
-```
+```text
 ~
 ├── .zshrc                    # Shell config (Zsh + Zinit + Oh-My-Zsh)
 ├── .tmux.conf                # tmux configuration
@@ -170,6 +170,7 @@ jobs = 4                              # Parallel installations
 ### 1. Start Small
 
 Don't try to track everything at once. Start with:
+
 ```bash
 yadm add ~/.zshrc
 yadm add ~/.config/ghostty/config
@@ -207,6 +208,7 @@ echo "Bootstrap complete. Restart your terminal."
 ```
 
 Then on a new machine:
+
 ```bash
 yadm clone https://github.com/youruser/dotfiles.git
 yadm bootstrap
