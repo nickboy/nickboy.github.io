@@ -10,7 +10,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
-  
+
   use: {
     baseURL: 'http://localhost:50144',
     trace: 'on-first-retry',
@@ -41,7 +41,7 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: 'hugo server',
+    command: 'hugo server -D --port 50144',
     url: 'http://localhost:50144',
     reuseExistingServer: true,
     timeout: 120 * 1000,

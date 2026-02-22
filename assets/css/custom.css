@@ -1,0 +1,6 @@
+/* Add white background behind logos in dark mode for visibility */
+.dark figure:has(img[src*="/logos/"]) img {
+  background-color: white;
+  padding: 8px;
+  border-radius: 6px;
+}

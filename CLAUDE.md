@@ -4,33 +4,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a personal website for Nick Liu built with Hugo static site generator, using the Ananke theme. The site is automatically deployed to GitHub Pages via GitHub Actions.
+Personal website for Nick Liu (Senior Software Engineer at Meta) built with Hugo static site generator, using the Blowfish theme. The site is deployed to Cloudflare Pages.
 
 ## Architecture
 
-- **Static Site Generator**: Hugo v0.144.2 (extended version)
-- **Theme**: Ananke (installed as git submodule)
-- **Deployment**: GitHub Pages via GitHub Actions
-- **Content Structure**: 
+- **Static Site Generator**: Hugo v0.156.0 (extended version)
+- **Theme**: Blowfish (installed as git submodule)
+- **Deployment**: Cloudflare Pages (auto-deploys on push to `main`)
+- **Configuration**: Multi-file config in `config/_default/` (hugo.toml, params.toml, languages.en.toml, menus.en.toml, markup.toml)
+- **Content Structure**:
   - `/content/about/` - About page
   - `/content/experience/` - Work experience
   - `/content/education/` - Education details
   - `/content/skills/` - Skills listing
+  - `/content/projects/` - Featured projects
   - `/content/posts/` - Blog posts
+- **Data Files**: `/data/en/` contains YAML data (experience.yaml, projects.yaml, author.yaml, blogs.yaml)
+- **Assets**: `/assets/img/` for images processed by Hugo Pipes
 
 ## Development Commands
 
 ### Local Development
 
-First, install Hugo locally:
-```bash
-# macOS with Homebrew
-brew install hugo
-
-# Or download from https://github.com/gohugoio/hugo/releases
-```
-
-Run development server:
 ```bash
 hugo server -D
 # Server runs at http://localhost:1313
@@ -44,13 +39,9 @@ hugo --gc --minify
 
 ### Theme Management
 
-Themes are installed as git submodules:
+The Blowfish theme is installed as a git submodule:
 ```bash
-# Initialize submodules after cloning
 git submodule update --init --recursive
-
-# Update themes to latest version
-git submodule update --remote --merge
 ```
 
 ### Creating Content
@@ -60,77 +51,48 @@ New blog post:
 hugo new posts/my-new-post.md
 ```
 
-New section page:
+### Testing
+
 ```bash
-hugo new section-name/_index.md
+npm test              # Run Playwright E2E tests
+npm run test:ui       # Interactive UI mode
+npm run test:debug    # Debug mode
 ```
 
 ## Deployment
 
-The site automatically deploys to GitHub Pages when pushing to the `main` branch. The workflow:
-1. Builds with Hugo extended version
-2. Uploads to GitHub Pages artifact storage
-3. Deploys to GitHub Pages environment
+The site deploys to **Cloudflare Pages** automatically when pushing to `main`.
 
-Manual deployment trigger:
-- Go to Actions tab → Deploy Hugo site to Pages → Run workflow
+- Build command: `hugo --gc --minify`
+- Output directory: `public`
+- Environment variable: `HUGO_VERSION = 0.156.0`
+
+A GitHub Actions workflow (`.github/workflows/hugo.yaml`) also exists for GitHub Pages as a backup.
 
 ## Configuration
 
-Main configuration is in `hugo.toml`:
-- Site title, base URL, and language settings
-- Theme selection (currently using `ananke`)
-- Menu structure for navigation
-- Various display parameters (reading time, share buttons, etc.)
+Configuration uses Blowfish's multi-file approach in `config/_default/`:
+
+- `hugo.toml` - Base site config (theme, taxonomies, outputs)
+- `params.toml` - Theme parameters (color scheme, homepage layout, article settings, search)
+- `languages.en.toml` - Language settings, author profile, social links
+- `menus.en.toml` - Navigation menu structure
+- `markup.toml` - Markdown rendering settings
 
 ## Important Notes
 
-- The site uses Hugo extended version for SCSS support
-- Both Ananke and PaperMod themes are available as submodules
-- Cloudflare Workers setup exists (`functions/_worker.js`) for edge deployment if needed
-- Custom layouts can be added in `/layouts/` directory
-- The 404 page and schema templates are customized in `/layouts/`
-- **Hugo v0.149.1**: Site requires Hugo v0.149.1 for compatibility with latest theme updates
-- **Theme Override**: `layouts/partials/social-share.html` overrides theme to fix deprecated `.Site.Social`
+- The site uses Hugo extended version for CSS processing
+- Blowfish uses Hugo Pipes for Tailwind CSS (build-time, not CDN)
+- Color scheme is `noir` with dark mode as default
+- Homepage uses `profile` layout mode
+- Search is enabled via Fuse.js (built into Blowfish)
+- Hugo version warning about Blowfish compatibility (0.141.0-0.155.3) can be ignored — site builds and works correctly with 0.156.0
 
-## PR Workflow
+## Cloudflare Pages Deployment
 
-### Creating a Pull Request
-
-1. Create a feature branch:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-2. Make your changes and test locally:
-   ```bash
-   hugo server -D
-   hugo --gc --minify  # Test production build
-   ```
-
-3. Commit your changes:
-   ```bash
-   git add .
-   git commit -m "feat: your commit message"
-   ```
-
-4. Push to remote:
-   ```bash
-   git push -u origin feature/your-feature-name
-   ```
-
-5. Create PR using GitHub CLI:
-   ```bash
-   gh pr create --title "Your PR title" --body "Your PR description"
-   ```
-
-6. Monitor GitHub Actions workflow for CI/CD checks
-
-### Cloudflare Pages Deployment
-
-If deploying to Cloudflare Pages, set the following environment variable in the dashboard:
+Set the following environment variable in the Cloudflare dashboard:
 ```
-HUGO_VERSION = 0.149.1
+HUGO_VERSION = 0.156.0
 ```
 
 Build settings:

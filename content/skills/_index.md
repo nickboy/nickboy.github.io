@@ -1,6 +1,7 @@
 ---
-title: "Skills"
+title: "Technical Skills"
 description: "Technical expertise and professional competencies"
+showTableOfContents: true
 ---
 
 # Technical Skills

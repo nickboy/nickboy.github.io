@@ -1,13 +1,24 @@
 experience:
+  - company: "Meta"
+    position: "Senior Software Engineer"
+    duration: "Jan 2026 - Present"
+    location: "Menlo Park, CA"
+    description: "Building infrastructure for Facebook Feed Ranking"
+    highlights:
+      - "Building infrastructure for Facebook Feed Ranking to support ML engineers"
+      - "Developing high-performance backend services in C++ for Timeline ranking"
+      - "Working at the intersection of infrastructure and product at massive scale"
+    technologies: ["C++", "ML Infrastructure", "Ranking Systems", "Backend Services", "Distributed Systems"]
+
   - company: "Walmart Global Tech"
     position: "Principal Software Engineer"
-    duration: "Nov 2024 - Present"
+    duration: "Nov 2024 - Dec 2025"
     location: "Remote"
-    description: "Leading data infrastructure initiatives for recruiting systems"
+    description: "Led data infrastructure initiatives for recruiting systems"
     highlights:
-      - "Leading Data Lake integration for recruiting related data"
-      - "Building data pipeline with Spark, Kafka and Hudi for 10+ sources"
-      - "Architecting scalable solutions for enterprise-level data processing"
+      - "Led Data Lake integration for recruiting related data"
+      - "Built data pipeline with Spark, Kafka and Hudi for 10+ sources"
+      - "Architected scalable solutions for enterprise-level data processing"
     technologies: ["Apache Spark", "Kafka", "Apache Hudi", "Data Lake", "Big Data"]
 
   - company: "Twitter (X)"
@@ -49,7 +60,7 @@ experience:
   - company: "Trend Micro"
     position: "Software Engineering Intern"
     duration: "June 2011 - Aug 2011"
-    location: "Taiwan"
+    location: "Taipei, Taiwan"
     description: "Network security and parental control systems"
     highlights:
       - "Implemented routing table maintenance system for parental control"

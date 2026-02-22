@@ -1,45 +1,34 @@
 # Cloudflare Pages Deployment Setup
 
-## ⚠️ IMPORTANT: Manual Configuration Required
+## Required Environment Variables
 
-Cloudflare Pages requires manual configuration in the dashboard for Hugo version.
+| Environment | Variable Name | Value |
+|------------|---------------|-------|
+| **Production** | `HUGO_VERSION` | `0.156.0` |
+| **Preview** | `HUGO_VERSION` | `0.156.0` |
 
-### Required Environment Variables
-
-| Environment | Variable Name | Value | Status |
-|------------|---------------|-------|---------|
-| **Production** | `HUGO_VERSION` | `0.149.1` | ❌ Currently 0.144.2 - NEEDS UPDATE |
-| **Preview** | `HUGO_VERSION` | `0.149.1` | ❌ Not set - NEEDS ADDING |
-
-### Setup Instructions
+## Setup Instructions
 
 1. Go to [Cloudflare Pages Dashboard](https://dash.cloudflare.com/)
 2. Select your project: `nickboy-github-io`
-3. Go to **Settings** → **Environment variables**
+3. Go to **Settings** > **Environment variables**
+4. Set `HUGO_VERSION` to `0.156.0` for both Production and Preview environments
 
-#### For Preview Environment:
-1. Click **Add variable**
-2. Set:
-   - Variable name: `HUGO_VERSION`
-   - Value: `0.149.1`
-   - Environment: Preview
+## Build Configuration
 
-#### For Production Environment:
-1. Find existing `HUGO_VERSION` variable
-2. Edit value from `0.144.2` to `0.149.1`
-3. Save changes
-
-### Build Configuration (Already Set)
-- Build command: `hugo`
+- Build command: `hugo --gc --minify`
 - Build output directory: `public`
 - Root directory: `/` (leave empty)
 
-### Why This is Required
-- The updated Ananke theme requires Hugo v0.149.1+
-- Cloudflare's default Hugo version (v0.118.2) is too old
-- The `.hugo-version` file is ignored by Cloudflare Pages
+## Notes
 
-### Verification
-After setting the environment variables, trigger a new deployment:
-1. Push any commit to trigger preview build
-2. Check build logs for: `hugo v0.149.1`
+- The site uses the **Blowfish** theme (git submodule)
+- Blowfish uses Hugo Pipes for Tailwind CSS processing — no Node.js build step required
+- The `.hugo-version` file is ignored by Cloudflare Pages; you must set the env var manually
+- `functions/_worker.js` provides basic Cloudflare Workers asset serving
+
+## Verification
+
+After updating environment variables, trigger a new deployment:
+1. Push any commit to trigger a preview build
+2. Check build logs for: `hugo v0.156.0`
