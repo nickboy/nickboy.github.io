@@ -57,7 +57,7 @@ I've worked at enough companies to know what I care about:
 Outside of my day job at Meta, I'm currently:
 
 - **Pursuing my MS at Georgia Tech** — taking courses in ML, deep learning, and reinforcement learning while working full-time
-- **Building this site with vibe coding** — using Claude Code to explore how AI tools change the way senior engineers work ([read about my workflow](/posts/vibe-coding-workflow/))
+- **Building this site with vibe coding** — using Claude Code to explore how AI tools change the way senior engineers work
 - **Refining my terminal and dotfiles setup** — an ongoing obsession documented in my [terminal setup post](/posts/my-terminal-setup-2026/) and managed with [yadm](/posts/managing-dotfiles-with-yadm/)
 
 ## Beyond Code

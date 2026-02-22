@@ -126,6 +126,11 @@ Never modify theme files directly in `themes/blowfish/`. Use extension points or
 - `scripts/generate-favicon.mjs` - Generates `<NL/>` branded favicons (16x16, 32x32, 180x180), ICO, and webmanifest
 - `scripts/generate-og-image.mjs` - Generates default Open Graph image
 
+## Git & PR Rules
+
+- **No AI attribution** — Do NOT include "Co-Authored-By: Claude", "Generated with Claude Code", or any AI-generated tags in commit messages or pull request descriptions.
+- Use conventional commit style (`feat:`, `fix:`, `docs:`, etc.)
+
 ## Important Notes
 
 - The site uses Hugo extended version for CSS processing

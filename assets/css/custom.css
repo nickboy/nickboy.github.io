@@ -5,6 +5,8 @@
   border-radius: 6px;
 }
 
+/* stylelint-disable selector-class-pattern, keyframes-name-pattern -- Blowfish theme BEM classes */
+
 /* Tab fade-in animation */
 .tab__panel {
   opacity: 0;
@@ -19,6 +21,7 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+/* stylelint-enable selector-class-pattern, keyframes-name-pattern */
 
 /* Scroll reveal for article content (below-fold only) */
 .scroll-reveal {
