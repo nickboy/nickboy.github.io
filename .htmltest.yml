@@ -3,3 +3,5 @@ CheckExternal: false
 CheckInternal: true
 CheckMailto: false
 CheckFavicon: false
+IgnoreAltEmpty: true
+IgnoreDirectoryMissingTrailingSlash: true
