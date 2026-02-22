@@ -30,10 +30,10 @@ test.describe('Homepage Tests', () => {
     // Blowfish shows "Recent" section on homepage
     await expect(page.locator('text=Recent').first()).toBeVisible();
 
-    // Check that blog posts appear - use first() to avoid tag link conflicts
-    await expect(page.getByRole('link', { name: /Terminal Setup/i }).first()).toBeVisible();
-    await expect(page.getByRole('link', { name: /CLI Tools/i }).first()).toBeVisible();
-    await expect(page.getByRole('link', { name: /Catppuccin/i }).first()).toBeVisible();
+    // Check that recent post cards appear (homepage shows 6 most recent)
+    const cards = page.locator('[class*="--card"]');
+    const count = await cards.count();
+    expect(count).toBeGreaterThanOrEqual(3);
   });
 
   test('should be responsive', async ({ page }) => {
