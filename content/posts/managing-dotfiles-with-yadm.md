@@ -8,7 +8,11 @@ description: "How I use yadm to manage my macOS dotfiles with automated testing,
 showTableOfContents: true
 ---
 
-Every developer eventually reaches the point where their configs become too valuable to lose. For me, that moment came when I spent a weekend setting up a new MacBook and realized I couldn't reproduce my environment reliably. That's when I started managing my dotfiles properly.
+{{< lead >}}
+Every developer eventually reaches the point where their configs become too valuable to lose. Here's how I use **yadm** to manage my macOS dotfiles with automated testing, daily maintenance, and a pre-commit workflow that keeps everything in check.
+{{< /lead >}}
+
+For me, the turning point was spending a weekend setting up a new MacBook and realizing I couldn't reproduce my environment reliably. That's when I started managing my dotfiles properly.
 
 After trying bare git repos, GNU Stow, and chezmoi, I settled on [yadm](https://yadm.io/) — and it's been my go-to for over a year.
 
@@ -23,11 +27,13 @@ There are many dotfile managers. Here's why yadm won:
 | **chezmoi** | Template-based with state management | Powerful but complex, uses its own DSL |
 | **yadm** | Thin wrapper around git | Git-native, minimal learning curve, built-in extras |
 
-The key insight: **yadm is just git**. Every git command works — `yadm add`, `yadm commit`, `yadm push`, `yadm diff`. If you know git, you know yadm. No new concepts to learn.
+{{< alert "check" >}}
+**The key insight**: yadm is just git. Every git command works — `yadm add`, `yadm commit`, `yadm push`, `yadm diff`. If you know git, you know yadm.
+{{< /alert >}}
 
 What yadm adds on top:
 
-- **Alternate files**: Different configs per machine (work vs personal) using `##hostname` or `##os` suffixes
+- **Alternate files**: Different configs per machine using `##hostname` or `##os` suffixes
 - **Encryption**: Encrypt sensitive files with GPG before pushing
 - **Bootstrap**: Run a setup script on first clone
 - **Native `$HOME` tracking**: No symlinks, files live where they belong
@@ -70,27 +76,29 @@ The `.gitignore` is crucial — you want to explicitly track only what you need:
 
 ## Automated Daily Maintenance
 
-One of the more opinionated parts of my setup is `daily-maintenance.sh` — a script that runs automatically and keeps everything updated.
+{{< timeline >}}
 
-```bash
-#!/bin/bash
-# Runs daily via launchd, keeps tools fresh
+{{< timelineItem icon="code" header="Homebrew Update" badge="Auto" >}}
+<code>brew update && brew upgrade && brew cleanup</code> — keeps all packages fresh.
+{{< /timelineItem >}}
 
-# Homebrew
-brew update && brew upgrade && brew cleanup
+{{< timelineItem icon="code" header="Zinit Plugins" badge="Auto" >}}
+<code>zsh -ic 'zinit update --all'</code> — updates all Zsh plugins.
+{{< /timelineItem >}}
 
-# Zinit plugins
-zsh -ic 'zinit update --all'
+{{< timelineItem icon="code" header="Neovim via bob" badge="Auto" >}}
+<code>bob update --all</code> — updates Neovim version manager and builds.
+{{< /timelineItem >}}
 
-# Neovim (via bob)
-bob update --all
+{{< timelineItem icon="code" header="LazyVim Sync" badge="Auto" >}}
+<code>nvim --headless "+Lazy! sync" +qa</code> — syncs all LazyVim plugins.
+{{< /timelineItem >}}
 
-# LazyVim
-nvim --headless "+Lazy! sync" +qa
+{{< timelineItem icon="check" header="Cleanup" badge="Auto" >}}
+Removes broken symlinks in <code>~/.local/bin</code>. Tracks last run date to prevent duplicates.
+{{< /timelineItem >}}
 
-# Cleanup broken symlinks in ~/.local/bin
-find ~/.local/bin -type l ! -exec test -e {} \; -delete
-```
+{{< /timeline >}}
 
 The script:
 - **Tracks last run date** to prevent duplicate runs
@@ -124,12 +132,14 @@ fi
 
 The test suite (`test-dotfiles.sh`) validates:
 
-- **Shell syntax**: `bash -n` on all `.sh` files
-- **ShellCheck**: Static analysis for shell scripts
-- **Markdown lint**: All `.md` files pass markdownlint
-- **YAML lint**: Configuration files are valid
-- **File permissions**: Scripts in `.local/bin/` are executable
-- **No secrets**: Checks for accidentally committed tokens or keys
+{{< keywordList >}}
+{{< keyword icon="check" >}} Shell syntax {{< /keyword >}}
+{{< keyword icon="check" >}} ShellCheck {{< /keyword >}}
+{{< keyword icon="check" >}} Markdown lint {{< /keyword >}}
+{{< keyword icon="check" >}} YAML lint {{< /keyword >}}
+{{< keyword icon="check" >}} File permissions {{< /keyword >}}
+{{< keyword icon="check" >}} No secrets {{< /keyword >}}
+{{< /keywordList >}}
 
 This catches mistakes before they reach the repo. I never push broken configs.
 
@@ -151,7 +161,9 @@ not_found_auto_install = true         # Auto-install missing versions
 jobs = 4                              # Parallel installations
 ```
 
-The `idiomatic_version_file_enable` setting is key — it means mise respects `.nvmrc`, `.python-version`, and `.tool-versions` files in project directories. So when I `cd` into a project that needs Node 18, mise automatically activates it.
+{{< alert "bolt" >}}
+**Key setting**: `idiomatic_version_file_enable` means mise respects `.nvmrc`, `.python-version`, and `.tool-versions` files in project directories. When I `cd` into a project that needs Node 18, mise automatically activates it.
+{{< /alert >}}
 
 ## Practical Tips
 
@@ -219,12 +231,14 @@ I keep a `CLAUDE.md` in my dotfiles repo — it documents the architecture, conv
 
 With this setup:
 
-- **New machine setup**: Clone + bootstrap, done in under an hour
-- **Daily updates**: Automated, zero manual intervention
-- **Config changes**: Tested before commit, never push broken configs
-- **Cross-machine sync**: `yadm pull` on any machine
-- **Rollback**: Full git history, revert any change
+- **New machine setup** — Clone + bootstrap, done in under an hour
+- **Daily updates** — Automated, zero manual intervention
+- **Config changes** — Tested before commit, never push broken configs
+- **Cross-machine sync** — `yadm pull` on any machine
+- **Rollback** — Full git history, revert any change
 
 The initial investment is a few hours. The ongoing cost is near zero. And the peace of mind knowing your entire development environment is versioned, tested, and reproducible? Priceless.
 
-Check out my full setup at [github.com/nickboy/dotfiles](https://github.com/nickboy/dotfiles).
+Check out my full setup:
+
+{{< github repo="nickboy/dotfiles" >}}

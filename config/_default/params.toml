@@ -49,7 +49,7 @@ smartTOC = true
   showRelatedContent = true
   relatedContentLimit = 3
   showTaxonomies = true
-  showWordCount = false
+  showWordCount = true
   showZenMode = true
   sharingLinks = ["linkedin", "twitter", "reddit", "email"]
 

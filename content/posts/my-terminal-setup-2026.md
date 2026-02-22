@@ -8,13 +8,17 @@ description: "A walkthrough of my daily development environment built around Gho
 showTableOfContents: true
 ---
 
-After years of refining my terminal workflow, I've landed on a stack I genuinely enjoy using every day: **Ghostty** as the terminal emulator, **tmux** with **sesh** for session management, and **Neovim** with **LazyVim** for editing. Everything runs on macOS (Apple Silicon) with a consistent **Catppuccin Mocha** theme across all tools.
+{{< lead >}}
+After years of refining my terminal workflow, I've landed on a stack I genuinely enjoy using every day: **Ghostty** as the terminal emulator, **tmux** with **sesh** for session management, and **Neovim** with **LazyVim** for editing.
+{{< /lead >}}
+
+Everything runs on macOS (Apple Silicon) with a consistent {{< badge >}}Catppuccin Mocha{{< /badge >}} theme across all tools.
 
 Here's a deep dive into how it all fits together.
 
 ## Ghostty: The Terminal Emulator
 
-I switched to [Ghostty](https://ghostty.org) from Kitty a while back and haven't looked back. It's written in Zig, GPU-accelerated, and buttery smooth.
+I switched to [Ghostty](https://ghostty.org) from Kitty a while back and haven't looked back. It's written in {{< badge >}}Zig{{< /badge >}}, GPU-accelerated, and buttery smooth.
 
 My key configuration choices:
 
@@ -31,7 +35,9 @@ The **75% transparency with 20px blur** gives a nice frosted-glass look where my
 
 ### Quake-style Drop-down Terminal
 
-One of my favorite features is the quick terminal bound to `Cmd+backtick`:
+{{< alert "bolt" >}}
+**Pro tip**: This is my most-used keybinding. It slides a terminal down from the top of the screen for quick commands without leaving your current context.
+{{< /alert >}}
 
 ```bash
 keybind = global:super+grave_accent=toggle_quick_terminal
@@ -40,7 +46,7 @@ quick-terminal-screen = main
 quick-terminal-animation-duration = 0.1
 ```
 
-It slides down from the top of the screen for quick commands without leaving my current context. I use it constantly for git operations, running tests, and quick file checks.
+I use it constantly for git operations, running tests, and quick file checks.
 
 ### Split Panes
 
@@ -78,7 +84,9 @@ set -ag terminal-overrides ",xterm-256color:RGB"
 
 ### The sesh Session Picker
 
-The killer feature is pressing `Prefix + T` to get an FZF-powered session picker:
+{{< alert "star" >}}
+**The killer feature**: Press `Prefix + T` to get an FZF-powered session picker with instant access to all tmux sessions, zoxide directories, and config paths — all fuzzy-searchable.
+{{< /alert >}}
 
 ```bash
 bind-key "T" run-shell "sesh connect \"$(
@@ -96,7 +104,7 @@ bind-key "T" run-shell "sesh connect \"$(
 )\""
 ```
 
-This gives me instant access to all tmux sessions, zoxide directories, and config paths — all fuzzy-searchable. I can jump between projects in under a second.
+I can jump between projects in under a second.
 
 ### vim-tmux-navigator
 
@@ -121,12 +129,18 @@ I run Neovim via [bob](https://github.com/MordechaiHadad/bob) (a Neovim version 
 
 I have 19 extras enabled, including:
 
-- **AI**: `claudecode` and `copilot` for AI-assisted coding
-- **Languages**: Docker, Go, Java, JSON, Markdown, Python, Rust, TOML, TypeScript
-- **Editor**: `harpoon2` for quick file marks, `inc-rename` for live rename preview
-- **UI**: `treesitter-context` for sticky function headers
-- **DAP**: Core debugging support
-- **Testing**: Core test runner
+{{< keywordList >}}
+{{< keyword icon="code" >}} claudecode {{< /keyword >}}
+{{< keyword icon="code" >}} copilot {{< /keyword >}}
+{{< keyword icon="code" >}} Docker {{< /keyword >}}
+{{< keyword icon="code" >}} Go {{< /keyword >}}
+{{< keyword icon="code" >}} Java {{< /keyword >}}
+{{< keyword icon="code" >}} Python {{< /keyword >}}
+{{< keyword icon="code" >}} Rust {{< /keyword >}}
+{{< keyword icon="code" >}} TypeScript {{< /keyword >}}
+{{< keyword icon="code" >}} harpoon2 {{< /keyword >}}
+{{< keyword icon="code" >}} treesitter-context {{< /keyword >}}
+{{< /keywordList >}}
 
 ### Key Customizations
 
@@ -168,14 +182,29 @@ This lets me highlight code, send it to Claude for analysis, and apply suggestio
 
 ## The Full Flow
 
-Here's how it all connects in my daily work:
+{{< timeline >}}
 
-1. **Launch Ghostty** — transparent, GPU-accelerated terminal appears
-2. **`Prefix + T`** — sesh picker opens, I fuzzy-search for a project
-3. **tmux session loads** — with my saved layout (editor left, terminal right)
-4. **Neovim opens** — LazyVim with treesitter highlighting, LSP, and AI assistance
-5. **Navigate freely** — `Ctrl+h/j/k/l` moves between Neovim and tmux panes seamlessly
-6. **Quick terminal** — `Cmd+backtick` for one-off commands without context switching
+{{< timelineItem icon="code" header="Launch Ghostty" badge="Step 1" >}}
+Transparent, GPU-accelerated terminal appears with frosted-glass effect.
+{{< /timelineItem >}}
+
+{{< timelineItem icon="search" header="sesh Session Picker" badge="Step 2" >}}
+Press <code>Prefix + T</code> — fuzzy-search for a project across tmux sessions, zoxide dirs, and configs.
+{{< /timelineItem >}}
+
+{{< timelineItem icon="pencil" header="tmux Session Loads" badge="Step 3" >}}
+Saved layout restores: editor on the left, terminal on the right.
+{{< /timelineItem >}}
+
+{{< timelineItem icon="star" header="Neovim Opens" badge="Step 4" >}}
+LazyVim with treesitter highlighting, LSP, and AI assistance ready to go.
+{{< /timelineItem >}}
+
+{{< timelineItem icon="check" header="Navigate Freely" badge="Step 5" >}}
+<code>Ctrl+h/j/k/l</code> moves between Neovim and tmux panes seamlessly. <code>Cmd+backtick</code> for one-off commands.
+{{< /timelineItem >}}
+
+{{< /timeline >}}
 
 Everything shares the same **Catppuccin Mocha** color scheme, so the visual experience is cohesive. The transparent backgrounds mean my terminal, editor, and status bars all blend together.
 
@@ -183,8 +212,10 @@ Everything shares the same **Catppuccin Mocha** color scheme, so the visual expe
 
 This setup has evolved over many iterations. The key principles:
 
-- **Consistency**: Same theme, same keybindings philosophy across all tools
-- **Speed**: Every action should take less than a second
-- **Integration**: Tools should talk to each other (vim-tmux-navigator, sesh + zoxide, etc.)
+1. **Consistency** — Same theme, same keybindings philosophy across all tools
+2. **Speed** — Every action should take less than a second
+3. **Integration** — Tools should talk to each other (vim-tmux-navigator, sesh + zoxide, etc.)
 
-All my configs are managed with [yadm](https://yadm.io/) and available on [GitHub](https://github.com/nickboy/dotfiles). Feel free to steal what's useful.
+All my configs are managed with [yadm](https://yadm.io/) and available on GitHub:
+
+{{< github repo="nickboy/dotfiles" >}}
