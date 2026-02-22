@@ -7,7 +7,12 @@
     "test": "playwright test",
     "test:ui": "playwright test --ui",
     "test:debug": "playwright test --debug",
-    "test:report": "playwright show-report"
+    "test:report": "playwright show-report",
+    "lint": "npm run lint:md && npm run lint:yaml && npm run lint:css && npm run lint:js",
+    "lint:md": "markdownlint-cli2 'content/**/*.md'",
+    "lint:yaml": "yamllint -c .yamllint.yml data/",
+    "lint:css": "stylelint 'assets/css/**/*.css'",
+    "lint:js": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -22,6 +27,13 @@
   },
   "homepage": "https://github.com/nickboy/nickboy.github.io#readme",
   "devDependencies": {
-    "@playwright/test": "^1.55.0"
+    "@eslint/js": "^9.18.0",
+    "@playwright/test": "^1.55.0",
+    "eslint": "^9.18.0",
+    "markdownlint-cli2": "^0.17.0",
+    "stylelint": "^16.12.0",
+    "stylelint-config-standard": "^37.0.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.20.0"
   }
 }

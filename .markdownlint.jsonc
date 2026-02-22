@@ -1,0 +1,27 @@
+{
+  "default": true,
+  // Line length — not practical for blog content
+  "MD013": false,
+  // Allow inline HTML — Hugo shortcodes use HTML-like syntax
+  "MD033": false,
+  // First line heading — Hugo front matter comes before any heading
+  "MD041": false,
+  // Multiple top-level headings — Hugo pages use front matter title + content headings
+  "MD025": false,
+  // No alt text — Hugo figure shortcodes handle alt text differently
+  "MD045": false,
+  // Bare URLs — sometimes intentional in about/contact pages
+  "MD034": false,
+  // Blanks around lists — Hugo shortcodes break list detection
+  "MD032": false,
+  // Blanks around headings — Hugo shortcodes between headings and content
+  "MD022": false,
+  // Emphasis as heading — used for math callouts in technical posts
+  "MD036": false,
+  // Heading increment — Hugo shortcodes (accordion) create visual hierarchy outside headings
+  "MD001": false,
+  // Duplicate headings — Hugo section pages legitimately repeat headings (e.g. multiple degrees)
+  "MD024": false,
+  // Trailing punctuation — company names like "Inc." have legitimate punctuation
+  "MD026": false
+}

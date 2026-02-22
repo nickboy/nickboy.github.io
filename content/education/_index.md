@@ -37,21 +37,29 @@ showTableOfContents: true
 
 As a Teaching Assistant, I had the privilege of educating and mentoring over 180 students across multiple core computer science courses:
 
-- **Data Structures and Algorithms** (28 students)
-  - Taught fundamental algorithms and complexity analysis
-  - Guided students through hands-on programming assignments
+{{< accordion mode="collapse" separated=true >}}
 
-- **Computer Architecture** (78 students)
-  - Explained CPU design, memory hierarchy, and instruction sets
-  - Supervised lab sessions on assembly programming
+{{< accordionItem title="Data Structures and Algorithms (28 students)" icon="code" >}}
+- Taught fundamental algorithms and complexity analysis
+- Guided students through hands-on programming assignments
+{{< /accordionItem >}}
 
-- **Software Design** (40 students)
-  - Introduced design patterns and software architecture principles
-  - Mentored team projects using agile methodologies
+{{< accordionItem title="Computer Architecture (78 students)" icon="code" >}}
+- Explained CPU design, memory hierarchy, and instruction sets
+- Supervised lab sessions on assembly programming
+{{< /accordionItem >}}
 
-- **Introduction to Computer Science** (35 students)
-  - Taught programming fundamentals in Python and Java
-  - Helped students develop problem-solving skills
+{{< accordionItem title="Software Design (40 students)" icon="code" >}}
+- Introduced design patterns and software architecture principles
+- Mentored team projects using agile methodologies
+{{< /accordionItem >}}
+
+{{< accordionItem title="Introduction to Computer Science (35 students)" icon="code" >}}
+- Taught programming fundamentals in Python and Java
+- Helped students develop problem-solving skills
+{{< /accordionItem >}}
+
+{{< /accordion >}}
 
 #### Research Contributions
 

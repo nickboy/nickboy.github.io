@@ -1,23 +1,96 @@
 ---
 title: "Projects"
 description: "Featured projects and technical contributions"
+showTableOfContents: true
 ---
 
-# Featured Projects
+{{< lead >}}
+A mix of open source projects and key professional contributions across distributed systems, data infrastructure, and developer tooling.
+{{< /lead >}}
 
-Throughout my career, I've had the opportunity to work on challenging projects that push the boundaries of scale and performance. Here are some of the key initiatives I've led or contributed to significantly.
+## {{< icon "github" >}} Open Source
 
-## Open Source Contributions
+{{< github repo="nickboy/dotfiles" >}}
 
-I believe in giving back to the community and actively contribute to open-source projects. Check out my [GitHub profile](https://github.com/nickboy) for my latest contributions and personal projects.
+{{< github repo="nickboy/nickboy.github.io" >}}
 
-## Technical Stack
+---
 
-My projects typically leverage modern technologies and best practices:
+## {{< icon "star" >}} Professional Highlights
 
-- **Languages**: Python, Go, Java, JavaScript, TypeScript
-- **Big Data**: Apache Spark, Kafka, Hadoop, Hudi
-- **Cloud**: AWS (Lambda, DynamoDB, S3, EC2, ECS)
-- **Databases**: PostgreSQL, MySQL, DynamoDB, Redis
-- **DevOps**: Docker, Kubernetes, Terraform, GitHub Actions
-- **Monitoring**: Prometheus, Grafana, ELK Stack
+### FB Feed Ranking Infrastructure
+
+{{< keywordList >}}
+{{< keyword >}} C++ {{< /keyword >}}
+{{< keyword >}} ML Infrastructure {{< /keyword >}}
+{{< keyword >}} Ranking Systems {{< /keyword >}}
+{{< keyword >}} Meta {{< /keyword >}}
+{{< /keywordList >}}
+
+Building the infrastructure that powers Facebook's Feed Ranking — high-performance backend services in C++ that support ML engineers in delivering better ranking models. Working at the intersection of infrastructure and product, optimizing how billions of users see their Facebook Timeline.
+
+---
+
+### AWS Billing Unbilled Usage Auditor
+
+{{< keywordList >}}
+{{< keyword >}} Java {{< /keyword >}}
+{{< keyword >}} DynamoDB {{< /keyword >}}
+{{< keyword >}} AWS Lambda {{< /keyword >}}
+{{< keyword >}} Distributed Systems {{< /keyword >}}
+{{< /keywordList >}}
+
+Designed and built a system that detects unbilled usage across AWS services. Reduced false positives by **230 million monthly transactions** and cut charge discrepancies by **300x** — from $125,000 to $432.
+
+---
+
+### Twitter Fleet Kernel Automation
+
+{{< keywordList >}}
+{{< keyword >}} Python {{< /keyword >}}
+{{< keyword >}} Go {{< /keyword >}}
+{{< keyword >}} Redis {{< /keyword >}}
+{{< keyword >}} Linux Kernel {{< /keyword >}}
+{{< /keywordList >}}
+
+Standardized hardware and software configurations for **5,000+ production hosts**. Built a Python library for Canary Kernel Validation and designed automation for kernel updates at fleet scale. Resolved 140+ tickets in a single on-call week.
+
+---
+
+### Walmart Data Lake Integration
+
+{{< keywordList >}}
+{{< keyword >}} Apache Spark {{< /keyword >}}
+{{< keyword >}} Kafka {{< /keyword >}}
+{{< keyword >}} Apache Hudi {{< /keyword >}}
+{{< keyword >}} Big Data {{< /keyword >}}
+{{< /keywordList >}}
+
+Led enterprise-wide Data Lake integration for recruiting data pipelines, processing data from 10+ sources using Apache Spark, Kafka, and Apache Hudi. Architected scalable solutions for real-time data processing at enterprise scale.
+
+---
+
+## {{< icon "code" >}} Technical Stack
+
+{{< keywordList >}}
+{{< keyword >}} C++ {{< /keyword >}}
+{{< keyword >}} Python {{< /keyword >}}
+{{< keyword >}} Go {{< /keyword >}}
+{{< keyword >}} Java {{< /keyword >}}
+{{< keyword >}} TypeScript {{< /keyword >}}
+{{< keyword >}} Rust {{< /keyword >}}
+{{< keyword >}} Apache Spark {{< /keyword >}}
+{{< keyword >}} Kafka {{< /keyword >}}
+{{< keyword >}} Kubernetes {{< /keyword >}}
+{{< keyword >}} Docker {{< /keyword >}}
+{{< keyword >}} AWS {{< /keyword >}}
+{{< keyword >}} Terraform {{< /keyword >}}
+{{< keyword >}} Redis {{< /keyword >}}
+{{< keyword >}} DynamoDB {{< /keyword >}}
+{{< /keywordList >}}
+
+---
+
+{{< button href="/experience/" target="_self" >}}
+{{< icon "eye" >}} View Full Experience
+{{< /button >}}

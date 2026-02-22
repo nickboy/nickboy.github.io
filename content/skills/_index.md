@@ -6,7 +6,9 @@ showTableOfContents: true
 
 # Technical Skills
 
-## Programming Languages
+{{< accordion >}}
+
+{{< accordionItem title="Programming Languages" icon="code" open=true >}}
 
 ### Expert Level
 - **Python** - 7+ years of production experience, used for data pipelines, automation, and ML
@@ -25,7 +27,9 @@ showTableOfContents: true
 - **PHP** - Web applications, Laravel framework
 - **Ruby** - Scripting, Rails applications
 
-## Big Data & Analytics
+{{< /accordionItem >}}
+
+{{< accordionItem title="Big Data & Analytics" icon="fire" >}}
 
 ### Data Processing
 - **Apache Spark** - Large-scale data processing, ETL pipelines
@@ -39,7 +43,9 @@ showTableOfContents: true
 - **Pandas/NumPy** - Data analysis, feature engineering
 - **TensorFlow** - Deep learning experiments
 
-## Cloud & Infrastructure
+{{< /accordionItem >}}
+
+{{< accordionItem title="Cloud & Infrastructure" icon="cloud" >}}
 
 ### AWS Services
 - **Compute**: EC2, Lambda, ECS, Fargate
@@ -59,7 +65,9 @@ showTableOfContents: true
 - **Ansible** - Configuration management, automation
 - **CloudFormation** - AWS-specific IaC
 
-## Databases
+{{< /accordionItem >}}
+
+{{< accordionItem title="Databases" icon="list" >}}
 
 ### SQL Databases
 - **PostgreSQL** - Advanced features, performance tuning
@@ -72,7 +80,9 @@ showTableOfContents: true
 - **MongoDB** - Document store, aggregation framework
 - **Cassandra** - Wide column store, distributed systems
 
-## DevOps & Tools
+{{< /accordionItem >}}
+
+{{< accordionItem title="DevOps & Tools" icon="tag" >}}
 
 ### CI/CD
 - **GitHub Actions** - Workflow automation
@@ -90,7 +100,9 @@ showTableOfContents: true
 - **GitHub/GitLab** - Code review, project management
 - **Jira/Confluence** - Agile project management
 
-## Soft Skills
+{{< /accordionItem >}}
+
+{{< accordionItem title="Soft Skills" icon="comment" >}}
 
 ### Leadership
 - Technical team leadership
@@ -110,8 +122,14 @@ showTableOfContents: true
 - Root cause analysis
 - Data-driven decision making
 
-## Certifications & Training
+{{< /accordionItem >}}
+
+{{< accordionItem title="Certifications & Training" icon="graduation-cap" >}}
 
 - AWS Certified Solutions Architect (in progress)
 - Continuous learning through online courses and conferences
 - Regular participation in hackathons and tech talks
+
+{{< /accordionItem >}}
+
+{{< /accordion >}}

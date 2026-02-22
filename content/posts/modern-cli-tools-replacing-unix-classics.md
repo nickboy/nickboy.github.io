@@ -8,23 +8,25 @@ description: "A practical guide to modern CLI alternatives — bat, eza, ripgrep
 showTableOfContents: true
 ---
 
-I've been gradually replacing classic Unix tools with modern alternatives, mostly written in Rust. After a year of daily use, these aren't experiments anymore — they're muscle memory. Here's what stuck and why.
+{{< lead >}}
+I've been gradually replacing classic Unix tools with modern alternatives, mostly written in {{< badge >}}Rust{{< /badge >}}. After a year of daily use, these aren't experiments anymore — they're muscle memory.
+{{< /lead >}}
 
 ## The Replacements
 
 | Classic | Modern | Why |
 |---------|--------|-----|
-| `cat` | **bat** | Syntax highlighting, line numbers, git integration |
-| `ls` | **eza** | Icons, git status, tree view, color-coded |
-| `grep` | **ripgrep** (rg) | 10x faster, respects `.gitignore`, smart case |
-| `find` | **fd** | Simpler syntax, respects `.gitignore`, colored output |
-| `cd` | **zoxide** | Learns your habits, fuzzy matching |
-| `sed` | **sd** | Intuitive regex syntax, no escaping nightmare |
-| `du` | **dust** | Visual directory size with a tree view |
-| `df` | **duf** | Colorful, filterable disk usage |
-| `top` | **btop** | Beautiful TUI with mouse support, per-core graphs |
-| `ps` | **procs** | Colorized, searchable, tree view |
-| `history` | **atuin** | Encrypted sync, full-text search, workspace filtering |
+| `cat` | {{< badge >}}bat{{< /badge >}} | Syntax highlighting, line numbers, git integration |
+| `ls` | {{< badge >}}eza{{< /badge >}} | Icons, git status, tree view, color-coded |
+| `grep` | {{< badge >}}ripgrep{{< /badge >}} | 10x faster, respects `.gitignore`, smart case |
+| `find` | {{< badge >}}fd{{< /badge >}} | Simpler syntax, respects `.gitignore`, colored output |
+| `cd` | {{< badge >}}zoxide{{< /badge >}} | Learns your habits, fuzzy matching |
+| `sed` | {{< badge >}}sd{{< /badge >}} | Intuitive regex syntax, no escaping nightmare |
+| `du` | {{< badge >}}dust{{< /badge >}} | Visual directory size with a tree view |
+| `df` | {{< badge >}}duf{{< /badge >}} | Colorful, filterable disk usage |
+| `top` | {{< badge >}}btop{{< /badge >}} | Beautiful TUI with mouse support, per-core graphs |
+| `ps` | {{< badge >}}procs{{< /badge >}} | Colorized, searchable, tree view |
+| `history` | {{< badge >}}atuin{{< /badge >}} | Encrypted sync, full-text search, workspace filtering |
 
 ### Setting Up Aliases
 
@@ -62,6 +64,8 @@ bat isn't just `cat` with colors. I use it as:
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 ```
 
+{{< github repo="sharkdp/bat" >}}
+
 ### ripgrep — The Search Engine
 
 ripgrep is absurdly fast. My `.ripgreprc` configures smart defaults:
@@ -83,7 +87,9 @@ I also define custom file type groups:
 
 Then I can search only web files: `rg "useState" --type web`.
 
-My favorite trick is `rgf` — ripgrep piped into FZF with a preview, opening results in Neovim:
+{{< alert "bolt" >}}
+**Power move**: `rgf` — ripgrep piped into FZF with a preview, opening results in Neovim.
+{{< /alert >}}
 
 ```bash
 rgf() {
@@ -95,6 +101,8 @@ rgf() {
     xargs -r nvim
 }
 ```
+
+{{< github repo="BurntSushi/ripgrep" >}}
 
 ### zoxide — cd That Learns
 
@@ -114,15 +122,24 @@ eval "$(zoxide init zsh --hook pwd)"
 
 ### fd — find for Humans
 
-The syntax difference says it all:
+{{< tabs >}}
+{{< tab "Classic find" >}}
 
 ```bash
-# find: find hidden .env files, ignoring node_modules
+# find hidden .env files, ignoring node_modules
 find . -name ".env" -not -path "*/node_modules/*"
+```
 
-# fd: same thing
+{{< /tab >}}
+{{< tab "Modern fd" >}}
+
+```bash
+# same thing
 fd .env
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 fd respects `.gitignore` by default and is the engine behind my FZF file finder:
 
@@ -186,7 +203,9 @@ style = "compact"
 show_preview = true
 ```
 
-The **workspace filtering** is the killer feature. When I press Up in a git repo, I only see commands I ran in that repo. No more scrolling through unrelated history.
+{{< alert "star" >}}
+**Killer feature**: Workspace filtering. When I press Up in a git repo, I only see commands I ran in that repo. No more scrolling through unrelated history.
+{{< /alert >}}
 
 The secrets filter automatically strips AWS keys, GitHub tokens, and passwords from history:
 
@@ -209,7 +228,9 @@ history_filter = [
 
 ## Installation
 
-All of these tools are in my Brewfile:
+{{< alert >}}
+All of these tools are in my Brewfile — one `brew bundle` and you're set.
+{{< /alert >}}
 
 ```bash
 # Modern CLI replacements
@@ -228,8 +249,6 @@ brew "atuin"
 brew "starship"
 ```
 
-One `brew bundle` and you're set.
-
 ## Worth the Switch?
 
 Absolutely. The common thread across all these tools:
@@ -241,4 +260,6 @@ Absolutely. The common thread across all these tools:
 
 The transition cost is low — alias the classics, and you'll barely notice the switch. But you'll definitely notice when you're on a machine without them.
 
-Full configs in my [dotfiles](https://github.com/nickboy/dotfiles).
+Full configs in my dotfiles repo:
+
+{{< github repo="nickboy/dotfiles" >}}
