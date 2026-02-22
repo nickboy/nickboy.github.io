@@ -160,3 +160,4 @@ Project-level skills in `.claude/skills/` are auto-discovered by Claude Code:
 
 - **blog-writing** - Tech blog authoring conventions, shortcode usage, writing style guide
 - **site-optimize** - Build, deploy, performance, asset generation, configuration
+- **pre-push-checks** - Full CI pipeline locally before pushing (lint, build, htmltest, Playwright)
