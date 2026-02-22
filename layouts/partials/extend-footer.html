@@ -1,0 +1,85 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  function initAnimations() {
+    // AOS for elements always below fold
+    AOS.init({ duration: 600, easing: "ease-out", once: true, offset: 50 });
+
+    document.querySelectorAll(".timeline-item, .keyword").forEach(function (el, i) {
+      if (!el.getAttribute("data-aos")) {
+        el.setAttribute("data-aos", "fade-up");
+        el.setAttribute("data-aos-delay", Math.min(i * 50, 300).toString());
+      }
+    });
+
+    AOS.refresh();
+
+    // Scroll-reveal for elements that may be above or below fold
+    var viewH = window.innerHeight;
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add("in-view");
+            observer.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll(
+      "[class*='--card'], article .article-content > *"
+    ).forEach(function (el) {
+      if (el.getBoundingClientRect().top > viewH) {
+        el.classList.add("scroll-reveal");
+        observer.observe(el);
+      }
+    });
+  }
+
+  // Re-attach dark mode toggle listeners (lost when htmx swaps body innerHTML)
+  function reinitDarkModeToggle() {
+    var switcher = document.getElementById("appearance-switcher");
+    var switcherMobile = document.getElementById("appearance-switcher-mobile");
+
+    function handleToggle() {
+      document.documentElement.classList.toggle("dark");
+      var target = document.documentElement.classList.contains("dark") ? "dark" : "light";
+      localStorage.setItem("appearance", target);
+      var style = getComputedStyle(document.body);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute("content", style.backgroundColor);
+    }
+
+    function handleReset(e) {
+      e.preventDefault();
+      localStorage.removeItem("appearance");
+    }
+
+    if (switcher) {
+      switcher.addEventListener("click", handleToggle);
+      switcher.addEventListener("contextmenu", handleReset);
+    }
+    if (switcherMobile) {
+      switcherMobile.addEventListener("click", handleToggle);
+      switcherMobile.addEventListener("contextmenu", handleReset);
+    }
+  }
+
+  // Guard: this script re-executes on every htmx swap (it's inside <body>).
+  // Only run setup once; let the afterSettle handler do re-init on swaps.
+  if (!document.body.hasAttribute("hx-boost")) {
+    initAnimations();
+
+    document.body.setAttribute("hx-boost", "true");
+    document.body.setAttribute("hx-swap", "innerHTML transition:true show:window:top");
+    document.body.setAttribute("hx-indicator", "body");
+    htmx.process(document.body);
+
+    document.body.addEventListener("htmx:afterSettle", function () {
+      AOS.refreshHard();
+      initAnimations();
+      reinitDarkModeToggle();
+    });
+  }
+</script>

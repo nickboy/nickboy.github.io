@@ -8,7 +8,7 @@ showTableOfContents: true
 A mix of open source projects and key professional contributions across distributed systems, data infrastructure, and developer tooling.
 {{< /lead >}}
 
-## {{< icon "github" >}} Open Source
+## Open Source
 
 {{< github repo="nickboy/dotfiles" >}}
 
@@ -16,7 +16,7 @@ A mix of open source projects and key professional contributions across distribu
 
 ---
 
-## {{< icon "star" >}} Professional Highlights
+## Professional Highlights
 
 ### FB Feed Ranking Infrastructure
 
@@ -42,6 +42,10 @@ Building the infrastructure that powers Facebook's Feed Ranking — high-perform
 
 Designed and built a system that detects unbilled usage across AWS services. Reduced false positives by **230 million monthly transactions** and cut charge discrepancies by **300x** — from $125,000 to $432.
 
+{{< button href="/posts/case-study-aws-billing-auditor/" target="_self" >}}
+{{< icon "eye" >}} Read the Full Case Study
+{{< /button >}}
+
 ---
 
 ### Twitter Fleet Kernel Automation
@@ -54,6 +58,10 @@ Designed and built a system that detects unbilled usage across AWS services. Red
 {{< /keywordList >}}
 
 Standardized hardware and software configurations for **5,000+ production hosts**. Built a Python library for Canary Kernel Validation and designed automation for kernel updates at fleet scale. Resolved 140+ tickets in a single on-call week.
+
+{{< button href="/posts/case-study-twitter-fleet-automation/" target="_self" >}}
+{{< icon "eye" >}} Read the Full Case Study
+{{< /button >}}
 
 ---
 
@@ -70,7 +78,7 @@ Led enterprise-wide Data Lake integration for recruiting data pipelines, process
 
 ---
 
-## {{< icon "code" >}} Technical Stack
+## Technical Stack
 
 {{< keywordList >}}
 {{< keyword >}} C++ {{< /keyword >}}

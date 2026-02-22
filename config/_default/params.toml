@@ -11,6 +11,8 @@ enableStructuredBreadcrumbs = true
 
 mainSections = ["posts"]
 
+defaultSocialImage = "img/og-default.png"
+
 highlightCurrentMenuArea = true
 smartTOC = true
 

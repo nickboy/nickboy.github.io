@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://unpkg.com/htmx.org@2.0.4" crossorigin="anonymous"></script>
+<style>
+  /* htmx page transition: fade out old content, fade in new */
+  .htmx-swapping > * {
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+  }
+  .htmx-settling > * {
+    opacity: 1;
+    transition: opacity 200ms ease-out;
+  }
+</style>
