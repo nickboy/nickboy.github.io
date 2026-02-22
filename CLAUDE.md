@@ -21,6 +21,10 @@ Personal website for Nick Liu (Senior Software Engineer at Meta) built with Hugo
   - `/content/posts/` - Blog posts
 - **Data Files**: `/data/en/` contains YAML data (experience.yaml, projects.yaml, author.yaml, blogs.yaml)
 - **Assets**: `/assets/img/` for images processed by Hugo Pipes
+- **Custom CSS**: `assets/css/custom.css` (auto-loaded by Blowfish)
+- **Custom JS**: `layouts/partials/extend-footer.html` (auto-loaded by Blowfish)
+- **Layout Overrides**: `layouts/` for custom templates and partials
+- **Scripts**: `scripts/` for asset generation (favicons, OG images)
 
 ## Development Commands
 
@@ -32,6 +36,7 @@ hugo server -D
 ```
 
 Build the site:
+
 ```bash
 hugo --gc --minify
 # Output goes to ./public/
@@ -40,6 +45,7 @@ hugo --gc --minify
 ### Theme Management
 
 The Blowfish theme is installed as a git submodule:
+
 ```bash
 git submodule update --init --recursive
 ```
@@ -47,8 +53,23 @@ git submodule update --init --recursive
 ### Creating Content
 
 New blog post:
+
 ```bash
 hugo new posts/my-new-post.md
+```
+
+### Asset Generation
+
+Favicon generation (all sizes + ICO + webmanifest):
+
+```bash
+node scripts/generate-favicon.mjs
+```
+
+OG image generation:
+
+```bash
+node scripts/generate-og-image.mjs
 ```
 
 ### Testing
@@ -57,6 +78,7 @@ hugo new posts/my-new-post.md
 npm test              # Run Playwright E2E tests
 npm run test:ui       # Interactive UI mode
 npm run test:debug    # Debug mode
+npx markdownlint-cli2 'content/**/*.md'  # Lint markdown
 ```
 
 ## Deployment
@@ -79,6 +101,31 @@ Configuration uses Blowfish's multi-file approach in `config/_default/`:
 - `menus.en.toml` - Navigation menu structure
 - `markup.toml` - Markdown rendering settings
 
+## Customizations
+
+### Blowfish Extension Points
+
+- **Custom CSS**: `assets/css/custom.css` - auto-loaded by Blowfish, no import needed
+- **Footer JS**: `layouts/partials/extend-footer.html` - injected at page bottom
+- **Head tags**: `layouts/partials/extend-head.html` - injected in `<head>`
+
+Never modify theme files directly in `themes/blowfish/`. Use extension points or layout overrides.
+
+### Custom CSS Features
+
+- Dark mode logo backgrounds (white padding for logos in dark mode)
+- Tab fade-in animations using `@keyframes`
+- Scroll-fade animations for timeline items and cards
+
+### Custom JS Features
+
+- IntersectionObserver-based scroll-fade animations for `.timeline-item` and `.card` elements
+
+### Asset Generation
+
+- `scripts/generate-favicon.mjs` - Generates `<NL/>` branded favicons (16x16, 32x32, 180x180), ICO, and webmanifest
+- `scripts/generate-og-image.mjs` - Generates default Open Graph image
+
 ## Important Notes
 
 - The site uses Hugo extended version for CSS processing
@@ -87,14 +134,24 @@ Configuration uses Blowfish's multi-file approach in `config/_default/`:
 - Homepage uses `profile` layout mode
 - Search is enabled via Fuse.js (built into Blowfish)
 - Hugo version warning about Blowfish compatibility (0.141.0-0.155.3) can be ignored — site builds and works correctly with 0.156.0
+- **Do not use `{{</* icon */>}}` shortcodes inside headings** — they break rendering and produce `HAHAHUGOSHORTCODE` text
 
 ## Cloudflare Pages Deployment
 
 Set the following environment variable in the Cloudflare dashboard:
-```
+
+```text
 HUGO_VERSION = 0.156.0
 ```
 
 Build settings:
+
 - Build command: `hugo --gc --minify`
 - Output directory: `public`
+
+## Claude Code Skills
+
+Project-level skills in `.claude/skills/` are auto-discovered by Claude Code:
+
+- **blog-writing** - Tech blog authoring conventions, shortcode usage, writing style guide
+- **site-optimize** - Build, deploy, performance, asset generation, configuration

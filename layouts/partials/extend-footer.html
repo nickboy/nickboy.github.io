@@ -1,0 +1,41 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  // AOS for discrete UI components only
+  AOS.init({
+    duration: 600,
+    easing: "ease-out",
+    once: true,
+    offset: 50,
+  });
+
+  document.querySelectorAll(".card, .timeline-item, .keyword").forEach(function (el, i) {
+    if (!el.getAttribute("data-aos")) {
+      el.setAttribute("data-aos", "fade-up");
+      el.setAttribute("data-aos-delay", Math.min(i * 50, 300).toString());
+    }
+  });
+
+  AOS.refresh();
+
+  // Separate scroll-fade for article content (no AOS, no opacity:0 on load)
+  var viewH = window.innerHeight;
+  var articleObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("in-view");
+          articleObserver.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll("article .article-content > *").forEach(function (el) {
+    // Only animate elements that start below the viewport
+    if (el.getBoundingClientRect().top > viewH) {
+      el.classList.add("scroll-reveal");
+      articleObserver.observe(el);
+    }
+  });
+</script>
