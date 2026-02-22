@@ -1,20 +1,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://unpkg.com/htmx.org@2.0.4" crossorigin="anonymous"></script>
 <style>
-  @view-transition {
-    navigation: auto;
+  /* htmx page transition: fade out old content, fade in new */
+  .htmx-swapping > * {
+    opacity: 0;
+    transition: opacity 200ms ease-in;
   }
-  ::view-transition-old(root) {
-    animation: fade-out 0.2s ease-out forwards;
-  }
-  ::view-transition-new(root) {
-    animation: fade-in 0.3s ease-in forwards;
-  }
-  @keyframes fade-out {
-    from { opacity: 1; }
-    to { opacity: 0; }
-  }
-  @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  .htmx-settling > * {
+    opacity: 1;
+    transition: opacity 200ms ease-out;
   }
 </style>
