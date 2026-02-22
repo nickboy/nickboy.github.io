@@ -1,0 +1,22 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Nick Liu - Software Engineer"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  description = "Nick Liu - Senior Software Engineer at Meta, specializing in distributed systems, data infrastructure, and backend services"
+  copyright = "2026 Nick Liu"
+
+[params.author]
+  name = "Nick Liu"
+  email = "nickboy@users.noreply.github.com"
+  image = "img/profile.png"
+  headline = "Senior Software Engineer @ Meta"
+  bio = "Building infrastructure for Facebook Feed Ranking at Meta. Previously at Walmart, Twitter, AWS, and eBay. PhD studies in Computer Science."
+  links = [
+    { github = "https://github.com/nickboy" },
+    { linkedin = "https://linkedin.com/in/nickliu0211" },
+    { email = "mailto:nickboy@users.noreply.github.com" },
+  ]

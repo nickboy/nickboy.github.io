@@ -1,0 +1,23 @@
+name: "Nick Liu"
+bio: "Experienced Software Engineer specializing in full-stack development with expertise in modern web technologies and cloud infrastructure. Passionate about building scalable, efficient solutions."
+email: "nickboy@users.noreply.github.com"
+avatar: "/images/avatar.png"
+
+social:
+  - name: github
+    url: "https://github.com/nickboy"
+    icon: "fab fa-github"
+  - name: linkedin
+    url: "https://linkedin.com/in/nickliu"
+    icon: "fab fa-linkedin"
+  - name: email
+    url: "mailto:nickboy@users.noreply.github.com"
+    icon: "fas fa-envelope"
+
+# Skills summary for homepage
+skills_summary:
+  - "Full-Stack Development"
+  - "Cloud Infrastructure"
+  - "DevOps & CI/CD"
+  - "System Architecture"
+  - "Performance Optimization"

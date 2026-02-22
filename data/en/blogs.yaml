@@ -1,0 +1,18 @@
+blogs:
+  - title: "Welcome to My New Portfolio"
+    date: "2025-01-09"
+    summary: "Introducing my redesigned portfolio website built with Hugo Noir theme, focused on showcasing my professional experience and projects."
+    tags: ["announcement", "web development"]
+    url: "/posts/my-first-post/"
+    
+  - title: "Building Scalable Data Pipelines at Walmart"
+    date: "2024-12-15"
+    summary: "Lessons learned from implementing real-time data pipelines processing TB-scale data using Apache Spark and Kafka."
+    tags: ["data engineering", "apache spark", "kafka"]
+    url: "/posts/data-pipelines/"
+    
+  - title: "Infrastructure Automation Best Practices"
+    date: "2024-10-20"
+    summary: "How we standardized configuration management across 5000+ servers at Twitter using Python and automation tools."
+    tags: ["infrastructure", "automation", "python"]
+    url: "/posts/infrastructure-automation/"
