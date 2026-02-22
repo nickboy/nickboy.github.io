@@ -33,7 +33,7 @@ test.describe('Homepage Tests', () => {
     // Check that blog posts appear - use first() to avoid tag link conflicts
     await expect(page.getByRole('link', { name: /Terminal Setup/i }).first()).toBeVisible();
     await expect(page.getByRole('link', { name: /CLI Tools/i }).first()).toBeVisible();
-    await expect(page.getByRole('link', { name: /Dotfiles/i }).first()).toBeVisible();
+    await expect(page.getByRole('link', { name: /Catppuccin/i }).first()).toBeVisible();
   });
 
   test('should be responsive', async ({ page }) => {

@@ -30,17 +30,17 @@ I believe in building systems that are not just functional, but elegant and main
 
 ## Areas of Expertise
 
-### Backend & Infrastructure
+### {{< icon "code" >}} Backend & Infrastructure
 - High-performance backend services in C++ and Go
 - Large-scale distributed system design and optimization
 - ML infrastructure and ranking systems
 
-### Data Engineering
+### {{< icon "fire" >}} Data Engineering
 - Real-time stream processing with Apache Spark and Kafka
 - Building data lakes and ETL pipelines
 - Managing TB-scale data operations
 
-### Cloud & DevOps
+### {{< icon "cloud" >}} Cloud & DevOps
 - AWS services architecture and optimization
 - Kubernetes orchestration and containerization
 - Infrastructure as Code with Terraform and Ansible
@@ -57,6 +57,18 @@ When I'm not architecting systems or writing code, I enjoy:
 
 I'm always interested in discussing technology, innovation, and opportunities to collaborate on challenging projects.
 
-- Email: [nickboy@users.noreply.github.com](mailto:nickboy@users.noreply.github.com)
-- LinkedIn: [linkedin.com/in/nickliu0211](https://www.linkedin.com/in/nickliu0211)
-- GitHub: [github.com/nickboy](https://github.com/nickboy)
+{{< button href="mailto:nickboy@users.noreply.github.com" target="_self" >}}
+{{< icon "email" >}} Email Me
+{{< /button >}}
+
+{{< button href="https://www.linkedin.com/in/nickliu0211" target="_blank" >}}
+{{< icon "linkedin" >}} LinkedIn
+{{< /button >}}
+
+{{< button href="https://github.com/nickboy" target="_blank" >}}
+{{< icon "github" >}} GitHub
+{{< /button >}}
+
+## Latest Posts
+
+{{< list limit=3 cardView=true >}}

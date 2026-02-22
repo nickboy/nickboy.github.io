@@ -8,7 +8,7 @@ showTableOfContents: true
 A mix of open source projects and key professional contributions across distributed systems, data infrastructure, and developer tooling.
 {{< /lead >}}
 
-## Open Source
+## {{< icon "github" >}} Open Source
 
 {{< github repo="nickboy/dotfiles" >}}
 
@@ -16,7 +16,7 @@ A mix of open source projects and key professional contributions across distribu
 
 ---
 
-## Professional Highlights
+## {{< icon "star" >}} Professional Highlights
 
 ### FB Feed Ranking Infrastructure
 
@@ -70,7 +70,7 @@ Led enterprise-wide Data Lake integration for recruiting data pipelines, process
 
 ---
 
-## Technical Stack
+## {{< icon "code" >}} Technical Stack
 
 {{< keywordList >}}
 {{< keyword >}} C++ {{< /keyword >}}
@@ -88,3 +88,9 @@ Led enterprise-wide Data Lake integration for recruiting data pipelines, process
 {{< keyword >}} Redis {{< /keyword >}}
 {{< keyword >}} DynamoDB {{< /keyword >}}
 {{< /keywordList >}}
+
+---
+
+{{< button href="/experience/" target="_self" >}}
+{{< icon "eye" >}} View Full Experience
+{{< /button >}}
